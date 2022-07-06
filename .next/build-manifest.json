@@ -34,11 +34,6 @@
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/users/admin.js"
-    ],
-    "/users/admin/doctors/new": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/users/admin/doctors/new.js"
     ]
   },
   "ampFirstPages": []
