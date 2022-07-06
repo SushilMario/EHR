@@ -33,7 +33,7 @@ export async function getServerSideProps(props)
     };
 }
 
-class DoctorShow extends Component
+class PatientShow extends Component
 {
     render()
     {
@@ -48,7 +48,7 @@ class DoctorShow extends Component
                         key = { index }
                         number = { record.recordNumber }
                         record = { record }
-                        routeStart = { `/doctors/${this.props.address}/` }
+                        routeStart = { `/patients/${this.props.address}/` }
                     />
                 );
             }
@@ -57,14 +57,6 @@ class DoctorShow extends Component
 
         return (
             <Layout>
-                <Link route = { `/doctors/${this.props.address}/records/new` } >
-                    <a>
-                        <Button primary floated = 'right' style = { { marginBottom: 10 } }>
-                            Create record
-                        </Button>
-                    </a>
-                </Link>
-
                 <Table>
                     <Header>
                         <Row>
@@ -85,4 +77,4 @@ class DoctorShow extends Component
     }
 }
 
-export default DoctorShow;
+export default PatientShow;
