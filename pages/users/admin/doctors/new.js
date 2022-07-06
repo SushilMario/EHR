@@ -65,7 +65,7 @@ class NewDoctor extends Component
     {
         return (
             <Layout>
-                <h2>Create a new campaign</h2>
+                <h2>Create a new doctor</h2>
                 
                 <Form onSubmit = { this.onSubmit } error = { this.state.errorMessage ? true : false }>
                     <Form.Field>
