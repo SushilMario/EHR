@@ -9,7 +9,7 @@ import { Router } from '../../../routes';
 import contract from '../../../ethereum/contract';
 import web3 from '../../../ethereum/web3';
 
-class NewPatient extends Component {
+class Assign extends Component {
     state =
         {
             doctorAddress: '',
@@ -97,4 +97,4 @@ class NewPatient extends Component {
     }
 }
 
-export default NewPatient;
+export default Assign;
