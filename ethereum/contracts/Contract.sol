@@ -83,7 +83,7 @@ contract Contract
 
     mapping(address => Doctor) addressToDoctorMapping;
     mapping(address => Patient) addressToPatientMapping;
-    mapping(address => address) doctorToPatientMapping;
+    mapping(address => address) patientToDoctorMapping;
 
     Appointment[] appointmentList;
     Record[] public recordList;
@@ -152,9 +152,9 @@ contract Contract
 
     // Assign doctor to patient and vice versa
 
-    function assign(address doctorAddress, address patientAddress) public adminOnly
+    function assign(address patientAddress, address doctorAddress) public adminOnly
     {
-        doctorToPatientMapping[doctorAddress] = patientAddress;
+        patientToDoctorMapping[patientAddress] = doctorAddress;
     }
 
    // check if is Doctor
@@ -169,6 +169,13 @@ contract Contract
     function isPatient(address givenAddress) public view returns(bool)
     {
         return patientRole.has(givenAddress);
+    }
+
+    // Check if is assigned to Doctor
+
+    function isAssignedToDoctor(address patientAddress) public view doctorOnly returns(bool)
+    {
+        return patientToDoctorMapping[patientAddress] == msg.sender;
     }
 
     // Create medical record
@@ -269,7 +276,7 @@ contract Contract
 
     modifier assignedDoctorOnly(address patientAddress)
     {
-        require(doctorToPatientMapping[msg.sender] == patientAddress, "You haven't been assigned this patient");
+        require(patientToDoctorMapping[patientAddress] == msg.sender, "You haven't been assigned this patient");
         _;
     }
 
