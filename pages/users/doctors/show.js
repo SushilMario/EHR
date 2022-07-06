@@ -48,7 +48,7 @@ class DoctorShow extends Component
                         key = { index }
                         number = { record.recordNumber }
                         record = { record }
-                        routeStart = { `/doctors/${this.props.address}/` }
+                        routeStart = { `/users/doctors/${this.props.address}/` }
                     />
                 );
             }
@@ -57,7 +57,7 @@ class DoctorShow extends Component
 
         return (
             <Layout>
-                <Link route = { `/doctors/${this.props.address}/records/new` } >
+                <Link route = { `/users/doctors/${this.props.address}/records/new` } >
                     <a>
                         <Button primary floated = 'right' style = { { marginBottom: 10 } }>
                             Create record

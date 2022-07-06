@@ -48,7 +48,7 @@ class PatientShow extends Component
                         key = { index }
                         number = { record.recordNumber }
                         record = { record }
-                        routeStart = { `/patients/${this.props.address}/` }
+                        routeStart = { `/users/patients/${this.props.address}/` }
                     />
                 );
             }
