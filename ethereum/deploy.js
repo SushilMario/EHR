@@ -21,7 +21,7 @@ const deploy = async () =>
     const result = await new web3.eth.Contract(abi)
         .deploy({ data: '0x' + bytecode })
         .send({ from: accounts[0] })
-        .catch(err => console.log(err))
+        .catch(err => console.log(err));
     
     console.log("Contract deployed to", result.options.address);
     provider.engine.stop();
